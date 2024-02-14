@@ -11,5 +11,31 @@ document.getElementById('btn-Triangle-Calculate').addEventListener('click', func
     const TriangleArea=0.5*triangle_base*triangle_Height;
     console.log(TriangleArea);
     document.getElementById('Triangle_Area').innerText=TriangleArea;
-
 })
+
+// Rectangle Area Calculation
+function RectangleAreaCalculation(){
+    const weight=getValueByID('rectangle_Weight_Input');
+    console.log(weight, typeof weight);
+    
+    const height=getValueByID('rectangle_Height_Input');
+    console.log(height, typeof height);
+
+    const area=weight*height;
+    console.log(area);
+
+    setArea('Rectangle_Area',area);
+
+    return  area;
+}
+
+function getValueByID(inputValue){
+    const value=document.getElementById(inputValue).value;
+    const  floatValue=parseFloat(value);
+    console.log(floatValue);
+    return floatValue;
+}
+function setArea(element,area){
+    document.getElementById(element).innerText=area;
+}
+
